@@ -1,31 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <div class="Header">
-        <nav class="Navbar">
-            <ul>
-                <li> HOME </li>
-                <li> ABOUT </li>
-                <li> CONTACT US </li>
-            </ul>
-        </nav>
+        <h3>VANILLA</h3>
+            <nav class="Navbar">
+                <ul>
+                    <li><span></span><a href="#Home">HOME</a></li>
+                    <li><span></span><a href="#Projects">PROJECTS</a></li>
+                    <li><span></span><a href="#Contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            
+            <button class="Hamburger">
+                <i class="material-icons menuIcon md-light">menu</i>
+                <i class="material-icons closeIcon md-light">close</i>
+            </button>
+
     </div>
-    
-    <div class="Hero">
-        <h1 class="Title">HOMEPAGE</h1>
+
+    <div id="Home" class="Hero">
+        
+        <div class="orbit on"></div>
+        <div class="Title">
+        <h1>VANILLA</h1>  
+        <p class="description">Web Development </p>
+        </div>
+
+        <a href="#Projects" class="arrowdown">V</a>
     </div>
    
 
 
-    <div class="About">
+    <div id="Projects" class="Projects">
+        <div class="Container">
+            <div class="allprojectscontainer">
+                    <div class="projectcontainer">
+
+                        <div class="projecttitlecontainer">
+                            <div class="projecttitle">Artistic Visions Gallery</div>
+                            <div class="projectsubtitle">Arts</div>
+                        </div>
+                        <div class="projectborder"></div>
+                        <div class="project">
+                            <img class="projectimg" src="./img/gallery.jpg">
+                            <p class="projectdescription">Immerse yourself in the world of art through our online gallery. Discover a diverse collection of paintings, sculptures, and digital art from talented artists worldwide. Browse with ease, explore artist profiles, and delve into exhibition histories. Enjoy secure transactions for purchasing art, and engage by leaving comments and reviews on your favorite masterpieces.</p>
+                            <div>
+                                <button class="projectbutton">VIEW PROJECT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projectcontainer">
+
+                        <div class="projecttitlecontainer">
+                            <div class="projecttitle">FitFlex Class Booking</div>
+                            <div class="projectsubtitle">Fitness</div>
+                        </div>
+                        <div class="projectborder"></div>
+                        <div class="project">
+                            <img class="projectimg" src="./img/gym.jpg">
+                            <p class="projectdescription">Elevate your fitness journey with our comprehensive class booking platform. Seamlessly explore various workout sessions, exceptional instructors, and flexible schedules. Register effortlessly, check availability, and make secure payments. Receive timely notifications and even manage changes. Admins have full control, ensuring smooth class management, instructor oversight, and user-centric functionality.</p>
+                            <div>
+                                <button class="projectbutton">VIEW PROJECT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projectcontainer">
+
+                        <div class="projecttitlecontainer">
+                            <div class="projecttitle">Recipe Xchange Community</div>
+                            <div class="projectsubtitle"> Cooking</div>
+                        </div>
+                        <div class="projectborder"></div>
+                        <div class="project">
+                            <div class="imgwrap">
+                            <img class="projectimg" src="./img/cooking.jpg">
+                            </div>
+                            <p class="projectdescription">Savor the success of a thriving recipe-sharing hub. Unleash your culinary creativity by discovering and contributing diverse recipes. Explore cuisines, filter by preferences, and find recipes ranging in complexity. Benefit from ratings and comments that enhance your cooking experience. With meal planning, shopping lists, and an engaged community, it's your go-to app for culinary adventures.</p>
+                            <div>
+                                <button class="projectbutton">VIEW PROJECT</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="Contact" id="Contact">
+
+            <h1>CONTACT US</h1>
+                    <form class="contactform">
+                        <input class="contactemail" placeholder="Email">
+                        <textarea class="contactmessage" placeholder="Message"></textarea>
+                        <input class="contactsubmit" type="submit" value="Submit">
+                    </form>
 
     </div>
 
-    <div class="Contact">
-
+    <div class="Footer">
+        <div class="footertext">&copy VANILLA 2023 </div>
+        
     </div>
 
 </body>

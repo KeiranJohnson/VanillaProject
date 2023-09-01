@@ -1,0 +1,513 @@
+:root {
+    --color-dark: #0a0a0a;
+    --color-light: #f7ffff;
+    --color-accent-1: #00baea;
+    --color-accent-2: #f24800
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-light);
+
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-dark);
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-dark);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-light);
+}
+
+.Header {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+
+    z-index: 10;
+
+
+}
+
+
+.Navbar ul li a:link,
+.Navbar ul li a:visited,
+.Navbar ul li a:hover,
+.Navbar ul li a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.Navbar ul {
+    font-weight: normal;
+    list-style-type: none;
+    display: flex;
+    gap: 3vw;
+}
+
+.Navbar li {
+    transition-duration: 400ms;
+    border-bottom: 1px solid transparent;
+    padding: 8px;
+
+}
+
+.Navbar li:hover {
+
+    cursor: pointer;
+
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+    padding: 8px;
+
+}
+
+
+.Navbar li>span {
+    position: relative;
+    left: 50%;
+    opacity: 20%;
+    transition: 500ms ease-in-out;
+}
+
+.Navbar li:hover>span {
+    position: relative;
+    left: 50%;
+    box-shadow: 0 0 0px 0px #fff, 0 -45px 50px 50px var(--color-accent-1), 0px 0px 50px 50px var(--color-accent-2);
+
+}
+
+@media screen and (max-width: 600px) {
+    .Navbar {
+        position: fixed;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        transform: translateY(-100%);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        color: white;
+        list-style: none;
+        padding-top: 4rem;
+        padding-right: 4rem;
+
+
+    }
+
+    .Navbar ul {
+        display: block;
+        gap: none;
+
+    }
+
+    .Navbar li {
+        transition-duration: 400ms;
+        border-bottom: 1px solid transparent;
+        padding: 1rem;
+
+    }
+
+    .Navbar li:hover {
+        width: 100%;
+        cursor: pointer;
+        border-bottom: 1px solid white;
+        border-radius: 4px;
+        padding: 1rem;
+
+    }
+
+    .Navbar li:hover>span {
+        position: relative;
+
+        box-shadow: none;
+
+    }
+
+    .showNav {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .Hamburger {
+        display: none;
+    }
+}
+
+.Hamburger {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    padding: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.material-icons.closeIcon {
+    background-color: transparent;
+    display: none;
+}
+
+.material-icons.menuIcon {
+
+    background: transparent;
+}
+
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
+.Hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.Hero h1 {
+    scale: 200%;
+    letter-spacing: 10px;
+    transition: scale 400ms;
+
+}
+
+@media screen and (max-width: 600px) {
+    .Hero h1 {
+        scale: 125%;
+
+    }
+
+}
+
+.Hero .Title .description {
+    position: relative;
+    text-align: right;
+
+
+}
+
+.arrowdown {
+    position: absolute;
+    bottom: 20px;
+    scale: 200% 100%;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit {
+    position: relative;
+    display: inline-block;
+    left: 90px;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 0 0 150px 80px #fff, 0 0 250px 100px var(--color-accent-1);
+    transition: box-shadow 4s ease-out;
+    animation: spin 60s ease-in-out infinite;
+}
+
+.orbit::before,
+.orbit::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 0px 0px #fff, 0 0 500px 150px var(--color-accent-1);
+    opacity: 0;
+    transition: opacity 8s, transform 8s;
+}
+
+.on {
+    background-color: #fff;
+    box-shadow: 0 0 80px 40px #fff, 30px 0 200px 200px var(--color-accent-2);
+}
+
+.on::before {
+    transform: translateX(-150px);
+    opacity: 1;
+}
+
+.on::after {
+    transform: translateX(150px);
+    opacity: 1;
+}
+
+
+
+
+.Projects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+.Container {
+    width: 960px;
+
+}
+
+.allprojectscontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+
+    height: 300vh;
+}
+
+.projecttitlecontainer {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    padding-right: 40px;
+
+}
+
+.projecttitle {
+
+    font-size: 5vh;
+    text-transform: uppercase;
+
+}
+
+
+
+.projectsubtitle {
+
+    text-align: right;
+    padding: 16px;
+
+}
+
+
+.projectcontainer {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.projectborder {
+    height: 75%;
+    border-left: 1px solid white;
+    padding-left: 40px;
+}
+
+.project {
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 80%;
+
+}
+
+.projectbutton {
+    background: transparent;
+    color: var(--color-light);
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border: 1px solid var(--color-light);
+    transition: all 300ms ease-in-out;
+}
+
+.projectbutton:hover {
+    background: white;
+    color: var(--color-dark);
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border: 1px solid var(--color-light);
+}
+
+.imgwrap {
+    height: 60%;
+
+    overflow: hidden;
+}
+
+.projectimg {
+    width: 100%;
+
+
+    overflow-y: hidden;
+
+}
+
+.projectdescription {
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+@media screen and (max-width:600px) {
+    .projectcontainer {
+        flex-direction: column;
+    }
+
+    .projecttitlecontainer {
+        width: fit-content;
+        height: 10vh !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        padding-right: 40px;
+        padding-top: 40px;
+    }
+
+
+    .projectborder {
+        border-left: none !important;
+        height: 100px;
+        width: 75%;
+        border-bottom: 1px solid white;
+    }
+
+}
+
+.Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+
+}
+
+
+
+.contactform {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+@media screen and (max-width:600px) {
+    .contactform {
+        width: 100vw;
+    }
+
+}
+
+.contactemail {
+    height: 40px;
+    width: 75%;
+    padding: 8px;
+    margin: 4px;
+    color: white;
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-light);
+    transition: all 300ms ease-in-out;
+}
+
+.contactmessage {
+    height: 30vh;
+    width: 75%;
+    padding: 8px;
+    margin: 4px;
+    color: white;
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-light);
+    transition: all 200ms ease-in-out;
+}
+
+.contactemail:focus {
+    outline: 1px solid var(--color-accent-2);
+    border: 0px;
+}
+
+.contactmessage:focus {
+    outline: 1px solid var(--color-accent-1);
+    border: 0px solid var(--color-accent-1);
+}
+
+
+.contactsubmit {
+    background: transparent;
+    color: var(--color-light);
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border: 1px solid var(--color-light);
+    transition: all 300ms ease-in-out;
+}
+
+.contactsubmit:hover {
+    background: white;
+    color: var(--color-dark);
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border: 1px solid var(--color-light);
+}
+
+.Footer {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+
+
+}
+
+.footertext {
+    color: #606060;
+    font-size: 10pt;
+
+}
